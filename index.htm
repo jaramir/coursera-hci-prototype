@@ -7,29 +7,36 @@
     <link href="css/main.css" rel="stylesheet" media="screen">
   </head>
   <body>
+    <!--[if IE]>
+	<div class="alert">
+	  This site was tested in Google Chrome. It will not work in Internet Explorer. 
+	  <a href="http://google.com/chrome">Please download and install Google Chrome.</a> Thanks!
+	</div>
+    <![endif]-->
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
-
-    <form class="form-search">
-      <input type="text" class="input-medium search-query">
-      <button type="submit" class="btn">Search</button>
-      <a href="#" class="btn add-watchlist">Add to watchlist <i class="icon-arrow-right"></i></a>
-    </form>
-
-    <div id="main">
-      <h1>Welcome to Dashboard!</h1>
-      <h3>1: Search for something (eg. your name)</h3>
-      <h3>2: Look at the results updating in real time</h3>
-      <h3>3: Add to the watchlist the things you case for</h3>
-      <p>
-	Pssst.. You can even close this window and return later<br>
-	we will remember and show your watchlist results.<br>
-	But don't do that now! :-)
-      </p>
+    <div class="row-fluid">
+      <div class="span9" id="main">
+	<form class="form-search">
+	  <input type="text" class="input-medium search-query">
+	  <button type="submit" class="btn">Search</button>
+	  <a href="#" class="btn add-watchlist">Add to watchlist <i class="icon-arrow-right"></i></a>
+	</form>
+	<div id="results">
+	  <h1>Welcome to Dashboard!</h1>
+	  <h3>1: Search for something (eg. your name)</h3>
+	  <h3>2: Look at the results updating in real time</h3>
+	  <h3>3: Add to the watchlist the things you case for</h3>
+	  <p>
+	    Pssst.. You can even close this window and return later<br>
+	    we will remember and show your watchlist results.<br>
+	    But don't do that now! :-)
+	  </p>
+	</div>
+      </div>
+      <div class="span3" id="watchlist">
+      </div>
     </div>
-
-    <div class="watchlist"></div>
-
   </body>
 </html>

@@ -10,10 +10,10 @@ function search(event) {
     }
     else {
 	results = '<h3>No results found..</h3>' +
-	    '<h3>Maybe try searching for something else?</h3>' +
-	    '<h3>Like <a href="#" class="hint">design</h3>';
+	    '<p>Maybe try searching for something else?</p>' +
+	    '<p>Like <a href="#" class="hint">design</p>';
     }
-    $("#main").html(results);
+    $("#results").html(results);
 }
 
 function hint(event) {
@@ -31,7 +31,7 @@ function add_watchlist(event) {
     event.preventDefault();
     var term = $(".search-query").val();
     if(term)
-	$(".watchlist").append('<div>' + term + '<i class="delete-watchlist icon-remove"></i></div>');
+	$("#watchlist").append('<a class="btn">' + term + '<i class="delete-watchlist icon-remove"></i></a>');
 }
 
 function delete_watchlist(event) {
