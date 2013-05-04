@@ -3,6 +3,10 @@
     padding: 2em;
 }
 
+#alerts {
+    padding: .5em;
+}
+
 #watchlist a {
     margin: .5em;
 }

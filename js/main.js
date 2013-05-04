@@ -27,16 +27,42 @@ function link(event) {
     alert("This final implementation\nwill link to company resources\nthat are not available in this prototype");
 }
 
+function add_term(term) {
+    if(!term) return;
+    $("#watchlist").append('<a class="btn">' + term + '<i class="delete-watchlist icon-remove"></i></a>');
+}
+
 function add_watchlist(event) {
     event.preventDefault();
     var term = $(".search-query").val();
-    if(term)
-	$("#watchlist").append('<a class="btn">' + term + '<i class="delete-watchlist icon-remove"></i></a>');
+    add_term(term);
 }
+
+function undo_delete_watchlist(event) {
+    event.preventDefault();
+    var alert = $(this).parent();
+    var term = alert.data("term");
+    add_term(term);
+    alert.alert('close');
+}
+
+function add_deletion_alert(term) {
+    var alert = $('<div class="alert undo-message">"' + term + '" was removed from the Watchlist. <a class="btn btn-warning undo-delete-watchlist">Undo</a></div>');
+    alert.data("term", term);
+    $("#alerts").append(alert);
+    alert.alert();
+    window.setTimeout(function() {
+	alert.alert('close');
+    }, 5000);
+}
+
 
 function delete_watchlist(event) {
     event.preventDefault();
-    $(this).parent().remove();
+    var parent = $(this).parent();
+    var term = parent.text();
+    parent.remove();
+    add_deletion_alert(term);
 }
 
 $(document).ready(function() {
@@ -45,4 +71,5 @@ $(document).ready(function() {
     $(document).on("click", ".hint", hint);
     $(document).on("click", ".link", link);
     $(document).on("click", ".delete-watchlist", delete_watchlist);
+    $(document).on("click", ".undo-delete-watchlist", undo_delete_watchlist);
 });
