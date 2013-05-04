@@ -31,12 +31,18 @@ function add_watchlist(event) {
     event.preventDefault();
     var term = $(".search-query").val();
     if(term)
-	$(".watchlist").append("<div>" + term + "</div>");
+	$(".watchlist").append('<div>' + term + '<i class="delete-watchlist icon-remove"></i></div>');
+}
+
+function delete_watchlist(event) {
+    event.preventDefault();
+    $(this).parent().remove();
 }
 
 $(document).ready(function() {
     $(".form-search").on("submit", search);
+    $(".add-watchlist").on("click", add_watchlist);
     $(document).on("click", ".hint", hint);
     $(document).on("click", ".link", link);
-    $(".add-watchlist").on("click", add_watchlist);
+    $(document).on("click", ".delete-watchlist", delete_watchlist);
 });
