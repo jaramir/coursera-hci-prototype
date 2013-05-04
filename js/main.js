@@ -27,8 +27,16 @@ function link(event) {
     alert("This final implementation\nwill link to company resources\nthat are not available in this prototype");
 }
 
+function add_watchlist(event) {
+    event.preventDefault();
+    var term = $(".search-query").val();
+    if(term)
+	$(".watchlist").append("<div>" + term + "</div>");
+}
+
 $(document).ready(function() {
     $(".form-search").on("submit", search);
     $(document).on("click", ".hint", hint);
     $(document).on("click", ".link", link);
+    $(".add-watchlist").on("click", add_watchlist);
 });

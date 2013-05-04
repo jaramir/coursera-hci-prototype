@@ -1,0 +1,10 @@
+.main {
+    width: 70%;
+}
+.watchlist {
+    float: right;
+    width: 15%;
+}
+.watchlist div {
+    border: 1px solid blue;
+}
