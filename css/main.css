@@ -4,9 +4,27 @@
 }
 
 #alerts {
-    padding: .5em;
+    position: fixed;
+    bottom: 0;
+    right: 0;
 }
 
-#watchlist a {
+#alerts .alert {
+    padding: 5px;
+    margin: 5px;
+}
+
+#watchlist div {
+    display: inline-block;
     margin: .5em;
+    padding: .5em 1em .5em 1em;
+    border-radius: .5em;
+    background-color: #d9edf7;
+    border: 1px solid #bce8f1;
+    color: #3a87ad;
+}
+
+#watchlist div i {
+    cursor: pointer;
+    margin-left: .5em;
 }

@@ -29,7 +29,7 @@ function link(event) {
 
 function add_term(term) {
     if(!term) return;
-    $("#watchlist").append('<a class="btn">' + term + '<i class="delete-watchlist icon-remove"></i></a>');
+    $("#watchlist").append('<div class="pill">' + term + '<i class="delete-watchlist icon-remove"></i></div>');
 }
 
 function add_watchlist(event) {
