@@ -13,7 +13,28 @@ function search(event) {
 	    '<p>Maybe try searching for something else?</p>' +
 	    '<p>Like <a href="#" class="hint">design</p>';
     }
-    $("#results").html(results);
+
+    var meta = '<div class="meta">' +
+	'<span class="label label-info">Showing results for "' + $(".search-query").val() + '"</span>' +
+	'&nbsp;' +
+	'<a href="#" class="home">Return to the Dashboard</a>' +
+	'</div>';
+
+    $("#results").html(meta + results);
+}
+
+function go_home(event) {
+    var welcome = '<h1>Welcome to Dashboard!</h1>' +
+	'<h3>1: Search for something (eg. your name)</h3>' +
+	'<h3>2: Look at the results updating in real time</h3>' +
+	'<h3>3: Add to the watchlist the things you case for</h3>' +
+	'<p>' +
+	'Pssst.. You can even close this window and return later<br>' +
+	'we will remember and show your watchlist results.<br>' +
+	'But don\'t do that now! :-)' +
+	'</p>' +
+	'</div>';
+    $("#results").html(welcome);
 }
 
 function hint(event) {
@@ -70,6 +91,8 @@ $(document).ready(function() {
     $(".add-watchlist").on("click", add_watchlist);
     $(document).on("click", ".hint", hint);
     $(document).on("click", ".link", link);
+    $(document).on("click", ".home", go_home);
     $(document).on("click", ".delete-watchlist", delete_watchlist);
     $(document).on("click", ".undo-delete-watchlist", undo_delete_watchlist);
+    go_home();
 });
