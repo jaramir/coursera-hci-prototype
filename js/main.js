@@ -71,7 +71,7 @@ function go_home(event) {
     html = '<h1>Welcome to Dashboard!</h1>' +
         '<h3>1: Search for something (eg. your name)</h3>' +
         '<h3>2: Look at the results updating in real time</h3>' +
-        '<h3>3: Add to the watchlist the things you case for</h3>' +
+        '<h3>3: Add to the watchlist the things you care for</h3>' +
         '<p>' +
         'Pssst.. You can even close this window and return later<br>' +
         'we will remember and show your watchlist results.<br>' +
