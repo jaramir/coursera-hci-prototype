@@ -9,21 +9,22 @@
   <body>
     <!--[if IE]>
       <div class="alert">
-	This site was tested in Google Chrome. It will not work in Internet Explorer. 
-	<a href="http://google.com/chrome">Please download and install Google Chrome.</a> Thanks!
+        This site was tested in Google Chrome. It will not work in Internet Explorer.
+        <a href="http://google.com/chrome">Please download and install Google Chrome.</a> Thanks!
       </div>
     <![endif]-->
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/underscore.js"></script>
     <script src="js/main.js"></script>
     <div class="row-fluid">
       <div class="span9" id="main">
-	<form class="form-search">
-	  <input type="text" class="input-medium search-query">
-	  <button type="submit" class="btn">Search</button>
-	  <a href="#" class="btn add-watchlist">Add to watchlist <i class="icon-arrow-right"></i></a>
-	</form>
-	<div id="results" class="hero-unit"></div>
+        <form class="form-search">
+          <input type="text" class="input-medium search-query">
+          <button type="submit" class="btn">Search</button>
+          <a href="#" class="btn add-watchlist">Add to watchlist <i class="icon-arrow-right"></i></a>
+        </form>
+      <div id="results" class="hero-unit"></div>
       </div>
       <div class="span3" id="watchlist"></div>
       <div class="span3" id="alerts"></div>
